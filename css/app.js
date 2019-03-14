@@ -16,12 +16,17 @@ function displaySport() {
 
             for (var i = 0; i < results.length; i++) {
 
-                var imageUrl = results[i].images.fixed_height_still.url;
+                // var imageUrl = results[i].images.fixed_height_still.url;
                 var sportImage = $("<img>");
+                //////////////////////////
+                sportImage.attr("src", results[i].images.fixed_height_still.url);
+                sportImage.attr("data-still", results[i].images.fixed_height_still.url);
+                sportImage.attr("data-animate", results[i].images.fixed_height.url);
+                sportImage.addClass("gif");
+                sportImage.attr("data-state", "still");
+                ////////////////////////
                 var sportsDiv = $("<div>");
 
-                var rating = results[i].rating;
-                sportImage.addClass("classGif");
                 var p = $("<p>Rating: " + results[i].rating + "</p>");
 
                 var sportImage = $("<img src = '" + results[i].images.fixed_height.url + "' />");
@@ -32,7 +37,7 @@ function displaySport() {
             }
         })
 }
-// putting existing button on the page 
+// putting  button on the page 
 
 function renderButtons() {
     $("#gif-button").empty();
@@ -62,47 +67,16 @@ renderButtons();
 
 //////////////////////////// animation not working 
 
-// $(".gif").on("click", function () {
-
-//     var state = $(this).attr("data-state");
-
-//     if (state === "still") {
-//         $(this).attr("src", $(this).attr("data-animate"));
-//         $(this).attr("data-state", "animate");
-//     } else {
-//         $(this).attr("src", $(this).attr("data-still"));
-//         $(this).attr("data-state", "still");
-//     }
-// });
-
-/////////////////////////////
 $(".gif").on("click", function () {
-    for (var i = 0; i < response.length; i++) {
-        var state = $(this).attr("data-state"); /// still OR animate 
-        var stillURL = $(this).attr("data-still"); //still URL
-        var animURL = $(this).attr("data-animate"); // animated URL 
 
-        sportImage.attr({
-            "src": imageUrl,
-            "alt": "sport-image",
-            "data-state": "still",
-            "data-still": results[i].images.fixed_height_still.url,
-            "data-animate": results[i].images.fixed_height.url
-        });
+    var state = $(this).attr("data-state"); /// still OR animate 
 
-        if (state === "still") { // if it is currently paused  //  always a string 
-            $(this).attr({
-                "src": animURL,
-                "data-state": "animate"
-            });
-        } else {
-            $(this).attr({
-                "src": stillURL,
-                "data-state": "still"
-
-            });
-        }
-
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
     }
 
 });
