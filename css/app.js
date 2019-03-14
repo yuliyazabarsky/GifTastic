@@ -16,7 +16,7 @@ function displaySport() {
 
             for (var i = 0; i < results.length; i++) {
 
-                // var imageUrl = results[i].images.fixed_height_still.url;
+
                 var sportImage = $("<img>");
                 //////////////////////////
                 sportImage.attr("src", results[i].images.fixed_height_still.url);
@@ -28,9 +28,6 @@ function displaySport() {
                 var sportsDiv = $("<div>");
 
                 var p = $("<p>Rating: " + results[i].rating + "</p>");
-
-                var sportImage = $("<img src = '" + results[i].images.fixed_height.url + "' />");
-                // Prepending the sportImage to the images div
                 sportsDiv.append(p, sportImage);
                 $("#images").prepend(sportsDiv);
 
@@ -57,17 +54,21 @@ $("#add-sport").on("click", function (event) {
     event.preventDefault();
 
     var sport = $("#sport-input").val().trim();
-    sportList.push(sport);
+    if (sport === "") {
+        return false;
+    } else {
+        sportList.push(sport);
 
-    renderButtons();
-    $("#sport-input").val("");
+        renderButtons();
+        $("#sport-input").val("");
+    }
 });
 $(document).on("click", ".sport", displaySport);
 renderButtons();
 
 //////////////////////////// animation not working 
 
-$(".gif").on("click", function () {
+$("#images").on("click", ".gif", function () {
 
     var state = $(this).attr("data-state"); /// still OR animate 
 
