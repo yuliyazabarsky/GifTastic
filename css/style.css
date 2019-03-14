@@ -1,0 +1,28 @@
+button,
+div,
+form,
+input {
+    margin: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+
+.sport,
+#add-sport {
+    background-color: teal;
+    color: white;
+}
+
+hr {
+    border: solid;
+}
+
+body {
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png");
+}
