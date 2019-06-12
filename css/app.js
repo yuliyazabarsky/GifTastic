@@ -1,4 +1,4 @@
-var sportList = ["fencing", "soccer", "running", "skiing", "football", "rugby", "gymnastics", "basketball", "swimming", "tennis", "figure skating"];
+var sportList = ["golf", "fencing", "soccer", "running", "skiing", "football", "rugby", "gymnastics", "basketball", "swimming", "tennis", "figure skating", "quidditch"];
 
 function displaySport() {
     $("#images").empty();

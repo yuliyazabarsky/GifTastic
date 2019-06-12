@@ -5,17 +5,28 @@ input {
     margin: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+.jumbotron{
+    background: url("http://avondalegolf.com/wp-content/uploads/2014/05/PE040924187.jpg");
+}
 h1 {
     text-align: center;
+    color: gold;
     font-size: 50px;
     font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
+h3{
+    text-align: center;
+    color:gold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
 
 .sport,
 #add-sport {
-    background-color: teal;
+    background-color: green;
     color: white;
 }
 
@@ -23,6 +34,15 @@ hr {
     border: solid;
 }
 
+img{
+    border: solid 2px;
+    border-color: gold;
+    box-shadow: 10px 10px 5px grey;
+}
+img:hover { 
+    margin-top: 2px;
+  }
 body {
     background: url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png");
+
 }
